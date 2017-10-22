@@ -1,11 +1,12 @@
+#!/bin/bash
 ## declare an array variable
-declare -a arr=("element1" "element2" "element3")
+declare -a array=("one" "two" "three")
 
-## now loop through the above array
-for i in "${arr[@]}"
+# get length of an array
+arraylength=${#array[@]}
+
+# use for loop to read all values and indexes
+for (( i=1; i<${arraylength}+1; i++ ));
 do
-   echo "$i"
-   # or do whatever with individual element of the array
+  echo $i " / " ${arraylength} " : " ${array[$i-1]}
 done
-
-# You can access them using echo "${arr[0]}", "${arr[1]}" also
